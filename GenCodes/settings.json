@@ -1,0 +1,27 @@
+{
+    "swaggerUrl": "http://localhost:21021/swagger/v1/swagger.json",
+    "outputRoot": "test",
+    "baseclass": {
+        "name": "AbpBase",
+        "path": "@/lib/abpbase"
+    },
+    "classpath": "@/api/abp-service-proxies",
+    "modules": [
+        {
+            "name": "user",
+            "config": {
+                "list": {
+                    "serviceProxy": "UserServiceProxy",
+                    "listmodel": "PagedResultDtoOfUserDto",
+                    "template": "list.vue.template"
+                },
+                "create": {
+                    "model": "CreateUserDto"
+                },
+                "update": {
+                    "model": "UserDto"
+                }
+            }
+        }
+    ]
+}
